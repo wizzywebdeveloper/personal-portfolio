@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wisdom Godwin Edet — Frontend Developer | wisdom.dev</title>
+  <meta name="description" content="Wisdom Godwin — Frontend Developer. Building clean, responsive UIs and small-business websites."
+  />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+
+  <style>
+    /* Basic Reset */
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #98a0b3;
+      --accent: #6ee7b7;
+      --glass: rgba(255,255,255,0.03);
+      --maxw: 1100px;
+      --radius: 14px;
+      color-scheme: dark;
+    }
+
+    .my-log{border-radius: 50%;
+    }
+
+    /* .a-pro {
+      color: blue;
+    } */
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,#071022 0%, #071421 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:28px 16px;
+    }
+    .container{max-width:var(--maxw);margin:0 auto}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;
+    }
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#4dd0e1);display:flex;align-items:center;justify-content:center;font-weight:700;color:#04202c}
+    .brand h1{font-size:18px;margin:0}
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+    nav a:hover{background:var(--glass);color:var(--accent)}
+    .btn{background:transparent;color:var(--accent);border:1px solid rgba(110,231,183,0.12);padding:8px 12px;border-radius:10px;text-decoration:none}
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:var(--radius);display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:center}
+    .hero .intro h2{margin:0 0 8px 0;font-size:28px}
+    .intro p{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .primary{background:var(--accent);color:#04202c;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+
+    .card{background:var(--card);padding:18px;border-radius:12px}
+
+    /* Skills + Projects */
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+    .skills-list{display:flex;flex-wrap:wrap;gap:10px}
+    .skill-pill{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 10px;border-radius:10px;color:var(--muted);font-size:14px}
+
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .project{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
+    .project h4{margin:0 0 6px 0}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+    .tech{font-size:12px;color:var(--muted);margin-top:8px}
+
+    /* Contact */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:inherit}
+    input::placeholder, textarea::placeholder{color:rgba(255,255,255,0.35)}
+    .muted{color:var(--muted);font-size:14px}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted)}
+
+    /* Base styles (mobile-first) are already applied in your CSS */
+
+/* Small devices (portrait phones, 320px–480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    padding: 8px;
+  }
+  .card {
+    padding: 12px;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  section h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Medium devices (landscape phones to tablets, 481px–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  .container {
+    max-width: 90%;
+  }
+  .card {
+    margin: 12px 0;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Large devices (tablets to small laptops, 769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+  .container {
+    max-width: 85%;
+  }
+  .card {
+    padding: 18px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Extra large devices (desktops, 1025px and up) */
+@media (min-width: 1025px) {
+  body {
+    font-size: 17px;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+
+    /* Responsive */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      nav{display:none}
+    }
+
+    /* Light mode support */
+    :root.light{
+      --bg: #f7f9fb;
+      --card: #ffffff;
+      --muted: #5b6b7a;
+      --accent: #0b7285;
+      color-scheme: light;
+      color: #041726;
+    }
+    :root.light body{background:linear-gradient(180deg,#ffffff,#f4f7fb)}
+
+  </style>
+</head>
+<body>
+  <div class="container" id="page">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden><img class="my-log" src="assets/img/my-logo.jpg" width="60px" alt=""></div>
+        <div>
+          <h1>Wisdom Godwin Edet</h1>
+          <div class="muted">Frontend Developer · UI & Web</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div style="display:flex;gap:10px;align-items:center">
+        <button id="themeToggle" class="btn" aria-pressed="false">Toggle theme</button>
+        <a class="btn" href="#contact">Hire me</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="intro">
+          <h2>Hi — I’m Wisdom. I build clean, responsive web interfaces.</h2>
+          <p>I’m a frontend developer focused on performance, accessibility, and delightful UI. I help businesses and freelancers convert ideas into production-ready websites and web apps.</p>
+
+          <div class="cta">
+            <a class="primary" href="#contact">Book a call</a>
+            <a class="btn" href="#projects">See projects</a>
+          </div>
+
+          <div style="margin-top:18px">
+            <div class="muted">Top skills</div>
+            <div class="skills-list" style="margin-top:8px">
+              <span class="skill-pill">HTML</span>
+              <span class="skill-pill">CSS</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">React</span>
+              <span class="skill-pill">Responsive Design</span>
+              <span class="skill-pill">Accessibility</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3>Quick facts</h3>
+          <p class="muted">Based in Nigeria · Available for remote work · Open to freelance & contract roles</p>
+
+          <hr style="opacity:0.06;margin:12px 0">
+
+          <h2>Profile links</h2>
+
+          <div style="display:flex;gap:8px;flex-direction:column">
+            <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/wisdom-godwin-edet-206294324" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://www.facebook.com/wizzywebdeveloper" target="_blank" rel="noopener">Facebook</a>
+            <a class="btn" href="https://www.instagram.com/wizzy_web_developer?igsh=ZTJhYnloYWl1anA5" target="_blank" rel="noopener">instagram<a>
+            <a class="btn" href="https://www.youtube.com/@wizzywebdeveloper" target="_blank" rel="noopener">Youtube</a>
+            <a class="btn" href="https://x.com/wizzywebdev?t=nWkEW68ikGb496vNjenT2Q&s=09" target="_blank" rel="noopener">X</a>
+            <a class="btn" href="#contact">Email</a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="grid-2" id="about" style="margin-top:20px">
+        <div class="card">
+          <h3>About me</h3>
+          <p class="muted">I’m a web developer who focuses on building interfaces that are accessible, responsive, and maintainable. I enjoy transforming complex problems into simple, elegant solutions.</p>
+
+          <h4 style="margin-top:12px">What I do</h4>
+          <ul class="muted">
+            <li>Frontend development (HTML, CSS, JS, React)</li>
+            <li>UI design & prototyping</li>
+            <li>Site performance & accessibility audits</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Experience & Education</h3>
+          <p class="muted">Edlivky Group — Frontend Developer (current)</p>
+          <p class="muted">MitaSchool — Ongoing learning (frontend web)</p>
+        </div>
+      </section>
+
+      <section id="projects" style="margin-top:20px">
+        <h3>Projects</h3>
+        <p class="muted">Selected work — case studies & demos</p>
+
+        <div class="projects" style="margin-top:12px">
+          <div class="project">
+           <h3>Wisdom.dev Portfolio</h3>
+           <p>A responsive personal portfolio website with dark/light  mode and a working contact form powered by Formspree.</p>
+           <a href="#" target="_blank">View Project →</a>
+          </div>
+
+          <article class="project">
+            <h4>E-commerce site</h4>
+            <p>Responsive landing page and product components for higher conversions.</p>
+            <div class="tech">HTML • CSS • React</div>
+            <a class="a-pro" href="https://wizzywebdeveloper.github.io/EliteShop/" target="_blank">View project →</a>
+          </article>
+
+          <article class="project">
+            <h4>Hotel Booking Egent Website</h4>
+            <p>
+               A clean, user-friendly hotel booking website designed to help travelers find and reserve the perfect stay with ease. It features detailed room listings, real-time availability, and a simple booking form that ensures a smooth and enjoyable experience for every user.</p>
+               <a href="https://wizzywebdeveloper.github.io/Hotels-Around-the-World/" target="_blank">View Project →</a>            
+          </article>
+
+          <article class="project">
+            <h4>Connect Hub Demo</h4>
+            <p>A business networking platform designed to help professionals and brands connect, collaborate, and grow through a simple monthly subscription model.</p>
+            <div class="tech">Audit • Fixes • Tests</div>
+            <a href="https://wizzywebdeveloper.github.io/ConnectHub/" target="_blank">View Project →</a>
+          </article>
+
+           <article class="project">
+            <h4>Vacation Rentals</h4>
+            <p>A modern booking platform that helps travelers find beautiful homes and apartments for short stays, with an easy search and secure reservation process.</p>
+            <a href="https://www.justpack.app/rent-in-egypt" target="_blank">View Project →</a>
+          </article>
+
+           <article class="project">
+            <h4>Game Boosting Service</h4>
+            <p>A trusted online platform that helps gamers level up faster with professional boosting services, secure transactions, and 24/7 customer support to enhance their gaming experience.</p>
+            <a href="https://gladiatorboost.com" target="_blank">View Project →</a>
+          </article>
+
+           <article class="project">
+            <h4>Beauty care shop</h4>
+            <p>An elegant eCommerce website designed for beauty brands to showcase and sell skincare and cosmetic products online — featuring smooth navigation, secure checkout, and an appealing modern design that attracts and converts customers.</p>
+            <a href="https://wizzywebdeveloper.github.io/beauty-store/" target="_blank">View Project →</a>
+          </article>
+           
+
+          <article class="project">
+            <h4>School Website</h4>
+            <p>A professional and informative school platform designed to attract parents and students with clear program details, online admission forms, and a modern layout that highlights the school’s values, achievements, and learning environment.</p>
+            <a href="https://wizzywebdeveloper.github.io/Excellence-Academy/" target="_blank">View Project →</a>
+          </article>
+
+
+      </section>
+
+      <section id="contact" style="margin-top:20px">
+        <div class="card">
+          <h3>Contact</h3>
+          <p class="muted">Send a message — I usually respond within 24–48 hours.</p>
+
+            <form action="https://formspree.io/f/xqayeqwa" method="POST">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+          </form>
+
+          <p class="muted" style="margin-top:12px">Or email me at <a href="https://mail.google.com/mail/?view=cm&fs=1&to=wisdomge.dev@gmail. com" target="_blank">wisdomge.dev@gmail.com</a></p>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> Wisdom Godwin — wisdom.dev</div>
+    </footer>
+  </div>
+
+  <script>
+    // Small scripts: theme toggle, form handling, smooth scroll
+    (function(){
+      const root = document.documentElement;
+      const themeToggle = document.getElementById('themeToggle');
+      const stored = localStorage.getItem('wisdom_theme');
+      if(stored === 'light') document.documentElement.classList.add('light');
+      themeToggle.addEventListener('click', ()=>{
+        const isLight = document.documentElement.classList.toggle('light');
+        localStorage.setItem('wisdom_theme', isLight? 'light' : 'dark');
+        themeToggle.setAttribute('aria-pressed', String(isLight));
+      });
+
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', (e)=>{
+          const href = a.getAttribute('href');
+          if(href === '#' || href === '') return;
+          const el = document.querySelector(href);
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+        })
+      })
+
+      // Contact form (client-side only). This will open user's mail client as a fallback.
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim() || 'New contact from website';
+        const message = document.getElementById('message').value.trim();
+
+        if(!name || !email || !message){ status.textContent = 'Please fill required fields.'; return; }
+        status.textContent = 'Preparing message…';
+
+        // Try to send via Formspree / Netlify / third-party: instruction is to configure a backend.
+        // For now we open the user's mail client with a prefilled message as fallback.
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+        const mailto = `mailto:you@wisdom.dev?subject=${encodeURIComponent(subject)}&body=${body}`;
+        // open mail client
+        window.location.href = mailto;
+        status.textContent = 'Mail client opened. If nothing happened, email: wisdomge.dev@gmail.com';
+      });
+
+    })();
+    
+  </script>
+</body>
+</html>
